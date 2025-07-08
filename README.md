@@ -53,19 +53,19 @@ To train the YOLOv11 model on your custom emotion-labeled dataset:
 yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50 imgsz=640
 
 Make sure your data.yaml is formatted like this:
-
-    train: /content/Custom-Workflow-Object-Detection-11/train
-    val: /content/Custom-Workflow-Object-Detection-11/valid
-    test: /content/Custom-Workflow-Object-Detection-11/test
-    nc: 7
-    names: ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
-    
-    roboflow:
-      workspace: hipster-pi5hv
-      project: custom-workflow-object-detection-kuaeb
-      version: 11
-      license: CC BY 4.0
-      url: https://universe.roboflow.com/hipster-pi5hv/custom-workflow-object-detection-kuaeb/dataset/11
+                                                    train: /content/Common-Hand-Gestures-(Emoji)-6/train
+                                                    val: /content/Common-Hand-Gestures-(Emoji)-6/valid
+                                                    test: /content/Common-Hand-Gestures-(Emoji)-6/test
+                                                          
+                                                    nc: 24
+                                                    names: ['Call-Me', 'Fingers-Crossed', 'Fingers-Spread', 'Hand-Raised', 'Heart', 'Italian-Gesture', 'Left-                                                                    Fist', 'Live-Long-Prosper', 'Love-You', 'Middle', 'Okay', 'Oncoming-Punch', 'Peace', 'Pinched-                                                                      Fingers', 'Point-Down', 'Point-Left', 'Point-Right', 'Pointing-Up', 'Praying-Hands', 'Raised-                                                                       Fist', 'Right-Fist', 'Rock', 'Thumbs-Down', 'Thumbs-Up']
+                                                          
+                                                    roboflow:
+                                                     workspace: eli-juergens-bbemu
+                                                     project: common-hand-gestures-emoji
+                                                     version: 6
+                                                     license: CC BY 4.0
+                                                     url: https://universe.roboflow.com/eli-juergens-bbemu/common-hand-gestures-emoji/dataset/6
 
 ---
 
