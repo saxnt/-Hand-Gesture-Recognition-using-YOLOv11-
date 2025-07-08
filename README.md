@@ -15,7 +15,7 @@ This project demonstrates how to detect **hand gesture** from real-time webcam u
 - **Model**: YOLOv11 (You Only Look Once - Ultralytics)
 - **Framework**: Python 3.10 using [Ultralytics YOLO](https://docs.ultralytics.com/)
 - **Approach**:
-  - Emotion labels assigned to facial regions (e.g., happy, sad, angry)
+  - Hand Gesture labels assigned to hand regions (e.g., okay,peace)
   - Trained YOLOv11 model for bounding box + class prediction
   - Inference supports webcam, video, or image files
 
@@ -53,19 +53,19 @@ To train the YOLOv11 model on your custom emotion-labeled dataset:
 yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50 imgsz=640
 
 Make sure your data.yaml is formatted like this:
-                                                    train: /content/Common-Hand-Gestures-(Emoji)-6/train
-                                                    val: /content/Common-Hand-Gestures-(Emoji)-6/valid
-                                                    test: /content/Common-Hand-Gestures-(Emoji)-6/test
+     
+    train: /content/Common-Hand-Gestures-(Emoji)-6/train                                                   
+    val: /content/Common-Hand-Gestures-(Emoji)-6/valid                                            
+    test: /content/Common-Hand-Gestures-(Emoji)-6/test
+    c: 24
+    names: ['Call-Me', 'Fingers-Crossed', 'Fingers-Spread', 'Hand-Raised', 'Heart', 'Italian-Gesture', 'Left-                                                                    Fist', 'Live-Long-Prosper', 'Love-You', 'Middle', 'Okay', 'Oncoming-Punch', 'Peace', 'Pinched-                                                                      Fingers', 'Point-Down', 'Point-Left', 'Point-Right', 'Pointing-Up', 'Praying-Hands', 'Raised-                                                                       Fist', 'Right-Fist', 'Rock', 'Thumbs-Down', 'Thumbs-Up']
                                                           
-                                                    nc: 24
-                                                    names: ['Call-Me', 'Fingers-Crossed', 'Fingers-Spread', 'Hand-Raised', 'Heart', 'Italian-Gesture', 'Left-                                                                    Fist', 'Live-Long-Prosper', 'Love-You', 'Middle', 'Okay', 'Oncoming-Punch', 'Peace', 'Pinched-                                                                      Fingers', 'Point-Down', 'Point-Left', 'Point-Right', 'Pointing-Up', 'Praying-Hands', 'Raised-                                                                       Fist', 'Right-Fist', 'Rock', 'Thumbs-Down', 'Thumbs-Up']
-                                                          
-                                                    roboflow:
-                                                     workspace: eli-juergens-bbemu
-                                                     project: common-hand-gestures-emoji
-                                                     version: 6
-                                                     license: CC BY 4.0
-                                                     url: https://universe.roboflow.com/eli-juergens-bbemu/common-hand-gestures-emoji/dataset/6
+    roboflow:
+     workspace: eli-juergens-bbemu
+     project: common-hand-gestures-emoji
+     version: 6
+     license: CC BY 4.0
+     url: https://universe.roboflow.com/eli-juergens-bbemu/common-hand-gestures-emoji/dataset/6
 
 ---
 
